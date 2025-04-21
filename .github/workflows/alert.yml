@@ -17,11 +17,11 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          username: ${{ secrets.EMAIL_HARSH }}  # This should reference your stored email
+          username: ${{ secrets.EMAIL_USERNAME }}  # This should reference your stored email
           password: ${{ secrets.EMAIL_PASSWORD }}  # This should reference your stored App Password
           subject: "Python CI Failed"
           to: harshvardhanshekhawat815@gmail.com  # The email to receive the failure notification
-          from: harshvardhanshekhawat815@gmail.com  # Your email address as the sender
+          from: ${{ secrets.EMAIL_USERNAME }}  # Your email address as the sender
           body: |
             The Python CI workflow failed.
             View logs at: ${{ github.event.workflow_run.html_url }}
