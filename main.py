@@ -5,7 +5,7 @@ logging.basicConfig(filename='logs/app.log', level=logging.INFO)
 def main():
     logging.info("Script started.")
     try:
-        x = 10 / 1
+        x = 10 / 0
     except ZeroDivisionError as e:
         logging.error(f"Error occurred: {e}")
         raise
